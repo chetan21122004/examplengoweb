@@ -1,0 +1,1540 @@
+/* 
+ * Navi Disha Foundation
+ * Custom CSS Styles
+ */
+
+:root {
+  --primary-color: #FF9933; /* Saffron from Indian flag */
+  --primary-dark: #E87B06;
+  --primary-light: #FFBB77;
+  --secondary-color: #138808; /* Green from Indian flag */
+  --secondary-dark: #0C6B06;
+  --accent-color: #000080; /* Indian navy blue */
+  --dark-color: #36454F; /* Charcoal */
+  --light-color: #F8F8F8;
+  --gray-color: #607d8b;
+  --white-color: #FFFFFF; /* White from Indian flag */
+  --section-padding: 60px 0;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-color);
+  overflow-x: hidden;
+  padding-top: 60px;
+  background-color: var(--light-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s;
+  z-index: -1;
+}
+
+.btn-primary:hover:before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+.section-padding {
+  padding: 40px 0;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.section-header {
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+}
+
+.section-header:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--white-color));
+  margin: 15px auto 0;
+  border-radius: 3px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+}
+
+.section-header h2:before,
+.section-header h2:after {
+  content: '🕉️';
+  font-size: 1rem;
+  display: inline-block;
+  opacity: 0.4;
+  padding: 0 10px;
+  transform: translateY(-5px);
+}
+
+.section-header p {
+  color: var(--gray-color);
+  font-size: 1.1rem;
+}
+
+.bg-light {
+  background-color: #f5f5f5 !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+/* Navbar Styles */
+.navbar {
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  z-index: 9999 !important;
+  height: auto;
+  min-height: 60px;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.navbar.scrolled {
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--dark-color);
+  font-weight: 500;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.navbar-light .navbar-nav .nav-link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover:before,
+.navbar-light .navbar-nav .nav-link.active:before {
+  width: 50%;
+  left: 25%;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary-color);
+}
+
+.donate-btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 90vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-top: -80px;
+}
+
+.hero-content {
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons .btn {
+  padding: 12px 30px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.7), rgba(19, 136, 8, 0.5), rgba(255, 255, 255, 0.3));
+}
+
+/* Indian Pattern Overlay */
+.hero-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/paisley.png');
+  opacity: 0.1;
+  z-index: 1;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: scrollBounce 2s infinite;
+}
+
+.scroll-indicator i {
+  font-size: 28px;
+  color: #fff;
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+    color: var(--primary-color);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+    color: var(--white-color);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+    color: var(--secondary-color);
+  }
+}
+
+/* Focus Areas Section */
+#focus-areas {
+  padding: 40px 0;
+  background-color: #fff;
+  position: relative;
+  z-index: 5;
+}
+
+#focus-areas .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+#focus-areas .col-md-6 {
+  margin-bottom: 20px;
+  display: block !important;
+}
+
+#focus-areas .focus-card {
+  display: block !important;
+  height: auto !important;
+  min-height: 250px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.focus-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  z-index: 10;
+  position: relative;
+  overflow: hidden;
+}
+
+.focus-card:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://www.transparenttextures.com/patterns/rangoli.png');
+  opacity: 0.1;
+  z-index: 0;
+  border-radius: 0 0 0 100%;
+}
+
+.focus-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.focus-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.focus-icon i {
+  font-size: 36px;
+  color: var(--primary-color);
+}
+
+.focus-card:nth-child(2) .focus-icon {
+  background-color: rgba(255, 152, 0, 0.2);
+}
+
+.focus-card:nth-child(2) .focus-icon i {
+  color: #ff9800;
+}
+
+.focus-card:nth-child(3) .focus-icon {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.focus-card:nth-child(3) .focus-icon i {
+  color: var(--secondary-color);
+}
+
+.focus-card:nth-child(4) .focus-icon {
+  background-color: rgba(156, 39, 176, 0.2);
+}
+
+.focus-card:nth-child(4) .focus-icon i {
+  color: #9c27b0;
+}
+
+.focus-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* About Section */
+.about-img img {
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.vision-mission {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.vision-mission h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.vision-mission h4 i {
+  color: var(--primary-color);
+}
+
+/* Programs Section */
+.program-row {
+  margin-bottom: 80px;
+}
+
+.program-row:last-child {
+  margin-bottom: 0;
+}
+
+.program-img img {
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.program-img img:hover {
+  transform: scale(1.03);
+}
+
+.program-content {
+  padding: 20px;
+}
+
+.program-icon {
+  margin-bottom: 20px;
+}
+
+.program-icon i {
+  font-size: 40px;
+  color: var(--primary-color);
+}
+
+.program-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.program-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.program-list li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.program-list li i {
+  color: var(--secondary-color);
+  margin-right: 10px;
+}
+
+/* Impact Counter Section with particles background */
+.impact-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-dark));
+}
+
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.impact-content {
+  position: relative;
+  z-index: 2;
+}
+
+.impact-section .section-header h2,
+.impact-section .section-header p {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 5;
+}
+
+.counter-box {
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.counter-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.counter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--primary-color), var(--white-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.counter-box p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 40px 0;
+  background-color: #fff;
+  position: relative;
+  z-index: 5;
+}
+
+#testimonials .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+#testimonials .col-md-6 {
+  margin-bottom: 20px;
+  display: block !important;
+}
+
+#testimonials .testimonial-card {
+  display: block !important;
+  height: auto !important;
+  min-height: 200px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  z-index: 10;
+  position: relative;
+}
+
+.testimonial-card:before {
+  content: "\f10d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card:nth-child(2) {
+  border-top-color: #FF9800;
+}
+
+.testimonial-card:nth-child(2):before {
+  background-color: #FF9800;
+}
+
+.testimonial-card:nth-child(3) {
+  border-top-color: var(--secondary-color);
+}
+
+.testimonial-card:nth-child(3):before {
+  background-color: var(--secondary-color);
+}
+
+.testimonial-content {
+  margin-bottom: 20px;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-user img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.testimonial-user h5 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.testimonial-user small {
+  color: var(--gray-color);
+}
+
+/* Team Section */
+#team {
+  padding: 40px 0;
+  background-color: #f5f5f5;
+  position: relative;
+  z-index: 5;
+}
+
+#team .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+#team .col-md-6 {
+  margin-bottom: 20px;
+  display: block !important;
+}
+
+#team .team-card {
+  display: block !important;
+  height: auto !important;
+  min-height: 250px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.team-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  z-index: 10;
+  position: relative;
+  border-top: 3px solid var(--primary-color);
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.team-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-img img {
+  transition: all 0.5s ease;
+}
+
+.team-card:hover .team-img img {
+  transform: scale(1.05);
+}
+
+.team-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.team-info p {
+  color: var(--gray-color);
+  margin-bottom: 15px;
+}
+
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: #f5f5f5;
+  color: var(--dark-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.team-social a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Get Involved Section Enhancements */
+#getinvolved {
+  padding: 40px 0;
+  background-color: #f5f5f5;
+  position: relative;
+  z-index: 5;
+}
+
+#getinvolved .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+#getinvolved .col-lg-6 {
+  margin-bottom: 20px;
+  display: block !important;
+}
+
+#getinvolved .involvement-card {
+  display: block !important;
+  height: auto !important;
+  min-height: 200px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.involvement-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  z-index: 10;
+  position: relative;
+}
+
+.involvement-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.involvement-card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(30, 136, 229, 0.05);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+  z-index: 0;
+}
+
+.involvement-card:nth-child(2):after {
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.card-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.card-title:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.involvement-form .form-control,
+.involvement-form .form-select {
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.involvement-form .form-control:focus,
+.involvement-form .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(30, 136, 229, 0.15);
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(30, 136, 229, 0.2);
+  border-top: 5px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Back to Top enhancement */
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-dark);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* Timeline section */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  margin-left: -1.5px;
+  background-color: var(--primary-light);
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  float: left;
+}
+
+.timeline-item:nth-child(odd) .timeline-content:after {
+  right: -60px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content:after {
+  left: -60px;
+}
+
+.timeline-content h4 {
+  position: relative;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.timeline-content .date {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  margin-bottom: 0;
+}
+
+/* Clearfix for timeline items */
+.timeline-item:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 767.98px) {
+  .timeline:before {
+    left: 30px;
+  }
+  
+  .timeline-content {
+    width: calc(100% - 80px);
+    float: right;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content:after {
+    right: auto;
+    left: -50px;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-content:after {
+    left: -50px;
+  }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  .navbar-nav {
+    margin-top: 15px;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+  
+  .donate-btn {
+    margin-top: 10px;
+  }
+  
+  .hero-section {
+    margin-top: -70px;
+    height: 80vh;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .program-content,
+  .about-img,
+  .contact-info {
+    margin-bottom: 30px;
+  }
+  
+  .focus-card {
+    margin-bottom: 20px;
+  }
+  
+  .team-card, .testimonial-card {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-content h4 {
+    font-size: 1.2rem;
+  }
+  
+  .section-padding {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    height: 70vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .counter {
+    font-size: 2.5rem;
+  }
+  
+  /* Fix side margins */
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .focus-card, .team-card, .testimonial-card, .involvement-card {
+    max-width: 100%;
+  }
+  
+  /* Improve counter visibility */
+  .counter-box {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .section-padding {
+    padding: 40px 0;
+  }
+  
+  /* Adjust timeline */
+  .timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  .hero-section {
+    margin-top: -60px;
+    height: 60vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .hero-buttons .btn:last-child {
+    margin-bottom: 0;
+  }
+  
+  .btn-lg {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+  
+  /* Adjust column spacing */
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .counter {
+    font-size: 2rem;
+  }
+  
+  /* Ensure map is visible */
+  .map-section iframe {
+    height: 300px;
+  }
+}
+
+/* Animation classes for GSAP */
+.fade-in-up, .fade-in-left, .fade-in-right, .scale-in {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Ensure form elements are visible */
+.form-control, .form-select, .btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* Improve section alternating backgrounds */
+section:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+section:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* Fix row spacing */
+.row {
+  margin-bottom: 20px;
+}
+
+/* Improve image visibility */
+img.img-fluid {
+  border: 1px solid #eee;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Contact information styling */
+#contact {
+  padding: 40px 0;
+  background-color: #fff;
+  position: relative;
+  z-index: 5;
+}
+
+#contact .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+#contact .col-lg-6 {
+  margin-bottom: 20px;
+  display: block !important;
+}
+
+#contact .contact-info,
+#contact .contact-form {
+  display: block !important;
+  height: auto !important;
+  min-height: 200px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.contact-info {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  z-index: 10;
+  position: relative;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.contact-item i {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.contact-item h5 {
+  margin-bottom: 5px;
+  color: var(--dark-color);
+}
+
+.contact-form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  z-index: 10;
+  position: relative;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--primary-color);
+}
+
+/* Add border decoration to team cards */
+.team-card:nth-child(2) {
+  border-top-color: var(--secondary-color);
+}
+
+.team-card:nth-child(3) {
+  border-top-color: var(--white-color);
+}
+
+.team-card:nth-child(4) {
+  border-top-color: var(--accent-color);
+}
+
+/* Enhance footer with Indian motifs */
+.footer {
+  background-color: var(--dark-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/sitar.png');
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Indian cultural elements */
+.chakra-wheel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.small-chakra {
+  display: inline-block;
+  animation: rotate 10s linear infinite;
+}
+
+.rangoli-decor {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background-image: url('https://www.transparenttextures.com/patterns/rangoli.png');
+  background-size: contain;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Tricolor line */
+.tricolor-line {
+  display: flex;
+  height: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tricolor-line .saffron,
+.tricolor-line .white,
+.tricolor-line .green {
+  height: 100%;
+  flex: 1;
+}
+
+.tricolor-line .saffron {
+  background-color: var(--primary-color);
+}
+
+.tricolor-line .white {
+  background-color: var(--white-color);
+}
+
+.tricolor-line .green {
+  background-color: var(--secondary-color);
+}
+
+/* Success particle animation */
+.success-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Enhanced navbar brand */
+.navbar-brand span {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+/* Enhanced button styles with Indian patterns */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/sitar.png');
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Section decorations */
+.section-padding {
+  position: relative;
+}
+
+.section-padding::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/paisley.png');
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* Enhance team cards with Indian pattern overlay */
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url('https://www.transparenttextures.com/patterns/henna.png');
+  opacity: 0.1;
+  border-radius: 0 0 0 80px;
+  z-index: 0;
+}
+
+/* Enhanced focus icon with mandala effect */
+.focus-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(255, 153, 51, 0.2);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { width: 100%; height: 100%; opacity: 0.5; }
+  50% { width: 120%; height: 120%; opacity: 0.2; }
+  100% { width: 100%; height: 100%; opacity: 0.5; }
+}
+
+/* Donation button enhancement */
+.donate-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.donate-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(rgba(255, 255, 255, 0.3), transparent 70%);
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.donate-btn:hover::before {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+/* Timeline enhancement with Indian elements */
+.timeline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  z-index: 1;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('https://www.transparenttextures.com/patterns/rangoli.png');
+  background-size: contain;
+  border-radius: 50%;
+  z-index: 3;
+  opacity: 0.5;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: -50px;
+  top: 20px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  left: -50px;
+  top: 20px;
+}
+
+/* Enhanced counter box with chakra motif */
+.counter-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Ashoka_Chakra.svg');
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: right 10px top 10px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Enhanced footer */
+.footer-about {
+  position: relative;
+}
+
+.footer-links h5::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+}
+
+/* Enhance form inputs with Indian border accents */
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(255, 153, 51, 0.25);
+} 
